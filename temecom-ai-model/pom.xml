@@ -20,4 +20,5 @@
 			<artifactId>deeplearning4j-core</artifactId>
 		</dependency>
 	</dependencies>
+
 </project>

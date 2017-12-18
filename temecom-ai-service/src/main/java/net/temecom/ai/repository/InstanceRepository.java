@@ -1,11 +1,9 @@
 package net.temecom.ai.repository;
 
-import java.util.UUID;
-
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import net.temecom.ai.model.NeuralNetworkConfiguration;
+import net.temecom.ai.model.NeuralNetworkInstance;
 
-public interface InstanceRepository extends MongoRepository<NeuralNetworkConfiguration, UUID>{
-
+public interface InstanceRepository extends MongoRepository<NeuralNetworkInstance, String>{
+	NeuralNetworkInstance findOne(String id);
 }

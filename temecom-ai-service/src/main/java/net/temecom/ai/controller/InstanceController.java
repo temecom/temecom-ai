@@ -9,35 +9,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.temecom.ai.model.NeuralNetworkConfiguration;
-import net.temecom.ai.repository.ConfigurationRepository;
+import net.temecom.ai.model.NeuralNetworkInstance;
+import net.temecom.ai.repository.InstanceRepository;
+import net.temecom.ai.service.AIService;
 
 @RestController
 @RequestMapping("/instances")
 public class InstanceController {
 	
 	@Autowired
-	private ConfigurationRepository repository ;
+	private InstanceRepository repository ;
 		
+	@Autowired
+	private AIService service; 
 	
 	@RequestMapping(value="/", method=RequestMethod.POST)
-	public NeuralNetworkConfiguration createConfiguration(@RequestBody NeuralNetworkConfiguration configuration) {
-		repository.save(configuration);
-		return configuration;
+	public NeuralNetworkInstance createInstance(@RequestBody NeuralNetworkInstance instance) {
+		repository.save(instance);
+		return instance;
 	}
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
-	public List<NeuralNetworkConfiguration> getConfigurations() {
+	public List<NeuralNetworkInstance> getInstances() {
 		return repository.findAll();
 	}
 	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
-	public NeuralNetworkConfiguration updateConfiguration(@RequestBody NeuralNetworkConfiguration configuration, @PathVariable String  id) {
-		repository.save(configuration);
-		return configuration;
+	public NeuralNetworkInstance updateInstance(@RequestBody NeuralNetworkInstance instance, @PathVariable String  id) {
+		repository.save(instance);
+		return instance;
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public List<NeuralNetworkConfiguration> getConfiguration(@PathVariable String  id) {
-		return repository.findAll();
+	public NeuralNetworkInstance getInstance(@PathVariable String  id) {
+		return repository.findOne(id);
+	}
+	
+	@RequestMapping(value="/{id}/activate", method=RequestMethod.GET)
+	public NeuralNetworkInstance activateInstance(@PathVariable String  id) {
+		return service.activate(id);
 	}
 }

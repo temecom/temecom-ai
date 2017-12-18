@@ -1,6 +1,9 @@
 package net.temecom.ai.model;
 
+import java.util.List;
+
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
+import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.weights.WeightInit;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,7 +16,10 @@ public class NeuralNetworkConfiguration extends AIEntity {
 	protected OptimizationAlgorithm optimizationAlgorithm;
 	protected Float learningRate;
 	protected Boolean backprop;
-	protected String name; 
+	protected String name;
+	protected Integer seed;
+	protected Updater updater;
+	List<NeuralNetworkLayer> layers;
 	
 	public Integer getIterations() {
 		return iterations;
@@ -57,5 +63,23 @@ public class NeuralNetworkConfiguration extends AIEntity {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public Integer getSeed() {
+		return seed;
+	}
+	public void setSeed(Integer seed) {
+		this.seed = seed;
+	}
+	public Updater getUpdater() {
+		return null;
+	}
+	public void setUpdater(Updater updater) {
+		this.updater = updater;
+	}
+	public List<NeuralNetworkLayer> getLayers() {
+		return layers;
+	}
+	public void setLayers(List<NeuralNetworkLayer> layers) {
+		this.layers = layers;
 	}
 }
