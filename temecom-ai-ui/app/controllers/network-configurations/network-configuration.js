@@ -8,13 +8,16 @@ export default Controller.extend({
 		},
 
 		weightInitSelected: function(id) {
-			this.setSelection('weightInit', id)
+			this.setSelection('weightInit', id);
 		},
 		activationSelected: function(id) {
-			this.setSelection('activation', id)
+			this.setSelection('activation', id);
 		},
 		updaterSelected: function(id) {
-			this.setSelection('updater', id)
+			this.setSelection('updater', id);
+		}, 
+		optimizationAlgorithmSelected: function(id) {
+			this.setSelection('optimizationAlgorithm', id);
 		}
 	}, 
 	

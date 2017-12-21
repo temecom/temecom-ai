@@ -4,8 +4,9 @@
 			<div class="card mb-4">
 				<div class="card-block">
 					<h3 class="card-title">{{t model.title}}</h3>
-					<table id="configurations-table" class="table table-striped table-bordered"
-						cellspacing="0" width="100%">
+					<table id="configurations-table"
+						class="table table-striped table-bordered" cellspacing="0"
+						width="100%">
 						<thead>
 							<tr>
 								<th>Name</th>
@@ -15,20 +16,27 @@
 						<tbody>
 							{{#each model.networkConfigurations as | configuration |}}
 							<tr>
-							
-							
-								<td>{{#link-to "network-configurations.network-configuration"
-							configuration.id}}{{configuration.name}}{{/link-to}} </td>
+
+
+								<td>{{#link-to
+									"network-configurations.network-configuration"
+									configuration.id}}{{configuration.name}}{{/link-to}}</td>
 								<td>{{configuration.id}}</td>
-							
-							</tr>{{/each}}
+
+							</tr>
+							{{/each}}
 						</tbody>
 					</table>
-					
+					<div class="card-footer ">
+						<div class="btn-group">
+							<button type="button" class="btn btn-md btn-secondary"{{action "newConfiguration"}}>{{t
+								"route.common.new" }}</button>
+							<button type="button" class="btn btn-md btn-secondary"{{action "deleteConfiguration"}}>{{t
+								"route.common.delete" }}</button>
+						</div>
+					</div>
 				</div>
-				<div class="card-footer">
-					<button type="button" class="btn btn-md btn-secondary" {{action "newConfiguration"}}>{{t "route.common.new" }}</button>
-				</div>
+
 			</div>
 		</div>
 	</section>

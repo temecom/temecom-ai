@@ -73,7 +73,7 @@ public class NetworkConfiguration extends AIEntity {
 		this.seed = seed;
 	}
 	public Updater getUpdater() {
-		return null;
+		return this.updater;
 	}
 	public void setUpdater(Updater updater) {
 		this.updater = updater;

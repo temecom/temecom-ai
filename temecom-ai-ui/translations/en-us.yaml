@@ -6,6 +6,7 @@ route:
     name: "Name"
     save: "Save"
     new: "New"
+    delete: "Delete"
     userName: "User Name"
   dashboard:
     title: "Dashboard"
@@ -20,6 +21,7 @@ route:
     backprop: "Back Propogation"
     seed: "Random Seed"
     updater: "Updater"
+    optimizationAlgorithm: "Optimization Algorithm"
   instances: 
     title: "Instances"
     instance: "Instance"
