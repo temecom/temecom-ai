@@ -1,0 +1,24 @@
+<div class="col-lg-12">
+	<section class="row">
+		<div class="col-lg-12">
+		<div class="card mb-6">
+			<div class="card-block">
+				<h3 class="card-title">{{t "route.instance.instance"}}</h3>
+				<form class="form" action="#">
+					
+					{{ai-input title="route.common.id" readOnly=true value=model.instance.id}}			
+					{{ai-input title="route.common.name" value=model.instance.name}}									
+					{{ai-select items=model.instanceStatuses title="route.instanceStatus.instanceStatus" value=model.instance.instanceStatus selected=(action "instanceStatusSelected")}}
+					{{ai-select items=model.networkConfigurations title="route.network.configuration" value=model.instance.networkConfiguration selected=(action "networkConfigurationSelected")}}
+				</form>
+				<div class="card-footer">
+				<div class="btn-group">
+						<button type="button" class="btn btn-md btn-secondary" {{action "saveInstance"}}>{{t "route.common.save" }}</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+{{outlet}}

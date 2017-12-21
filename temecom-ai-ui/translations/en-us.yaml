@@ -22,9 +22,12 @@ route:
     seed: "Random Seed"
     updater: "Updater"
     optimizationAlgorithm: "Optimization Algorithm"
-  instances: 
+  instance: 
     title: "Instances"
     instance: "Instance"
+  instanceStatus:
+    title: "Instance Statuses"
+    instanceStatus: "Instance Status"
   layers: 
     title: "Layers"
     layer: "Layer"

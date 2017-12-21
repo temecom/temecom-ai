@@ -11,6 +11,9 @@ Router.map(function() {
         this.route('network-configuration', {path:':id'});    	
     });
   this.route('dashboard');
+  this.route('instances', function() {
+      this.route('instance', {path:':id'});    	
+  });
 });
 
 export default Router;

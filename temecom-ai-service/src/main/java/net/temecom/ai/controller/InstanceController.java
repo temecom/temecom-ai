@@ -30,8 +30,6 @@ public class InstanceController extends EntityController<Instance>{
 		return service.activate(id);
 	}
 
-
-
 	@Override
 	public EntityRepository<Instance> getRepository() {
 		

@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import net.temecom.ai.model.neuralNetwork.LayerConfiguration;
 import net.temecom.ai.repository.EntityRepository;
-import net.temecom.ai.repository.LayerConfigurationRepository;
+import net.temecom.ai.repository.OutputLayerConfigurationRepository;
 
 @RestController
-@RequestMapping(value="/layerConfigurations")
-public class LayerController extends EntityController<LayerConfiguration>{
+@RequestMapping(value="/outputLayerConfigurations")
+public class OutputLayerController extends EntityController<LayerConfiguration>{
 	
 	@Autowired
 	private EntityRepository<LayerConfiguration> repository ;
