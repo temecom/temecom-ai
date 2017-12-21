@@ -1,0 +1,38 @@
+main:
+  title: "DL4J Console"
+route:
+  common:
+    id: "Id"
+    name: "Name"
+    save: "Save"
+    new: "New"
+    userName: "User Name"
+  dashboard:
+    title: "Dashboard"
+    information:
+      title: "DL4J Administrative and Monitoring Console"
+      description: "Manage your DL4J configuration templates, running instances, training data and trained models from a single site."
+  network:
+    title: "Network Configurations"
+    configuration: "Network Configuration"
+    activation: "Activation"
+    learningRate: "Learning Rate"
+    backprop: "Back Propogation"
+    seed: "Random Seed"
+    updater: "Updater"
+  instances: 
+    title: "Instances"
+    instance: "Instance"
+  layers: 
+    title: "Layers"
+    layer: "Layer"
+    dense-layer: "Dense Layer"
+    output-layer: "Output Layer"
+  weightInitialization:
+    title: "Weight Initializations"
+user:
+  signin: "Sign In" 
+  signout: "Sign Out"
+  name: "Name"
+  user-name: "User Name"
+  password: "Password"

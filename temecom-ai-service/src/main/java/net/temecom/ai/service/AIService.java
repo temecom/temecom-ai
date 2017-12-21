@@ -11,38 +11,38 @@ import org.deeplearning4j.nn.conf.layers.OutputLayer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import net.temecom.ai.model.NeuralNetworkConfiguration;
-import net.temecom.ai.model.NeuralNetworkDenseLayer;
-import net.temecom.ai.model.NeuralNetworkInstance;
-import net.temecom.ai.model.NeuralNetworkLayer;
-import net.temecom.ai.model.NeuralNetworkOutputLayer;
+import net.temecom.ai.model.neuralNetwork.NetworkConfiguration;
+import net.temecom.ai.model.neuralNetwork.DenseLayerConfiguration;
+import net.temecom.ai.model.neuralNetwork.Instance;
+import net.temecom.ai.model.neuralNetwork.LayerConfiguration;
+import net.temecom.ai.model.neuralNetwork.OutputLayerConfiguration;
 import net.temecom.ai.repository.InstanceRepository;
 
 @Service
 public class AIService {
 
 	
-	Map<String, NeuralNetworkInstance> activeInstances = new HashMap<>();
+	Map<String, Instance> activeInstances = new HashMap<>();
 	
 	@Autowired
 	private InstanceRepository repository ;
 	
-	public NeuralNetworkInstance activate(String id) {
+	public Instance activate(String id) {
  
-		NeuralNetworkInstance instance = repository.findOne(id);
-		NeuralNetworkConfiguration configuration = instance.getConfiguration();
+		Instance instance = repository.findOne(id);
+		NetworkConfiguration networkConfiguration = instance.getConfiguration();
 		NeuralNetConfiguration.Builder builder = new NeuralNetConfiguration.Builder()
-	                .seed(configuration.getSeed())
-	                .iterations(configuration.getIterations())
-	                .optimizationAlgo(configuration.getOptimizationAlgorithm())
-	                .learningRate(configuration.getLearningRate())
-	                .updater(configuration.getUpdater());  
+	                .seed(networkConfiguration.getSeed())
+	                .iterations(networkConfiguration.getIterations())
+	                .optimizationAlgo(networkConfiguration.getOptimizationAlgorithm())
+	                .learningRate(networkConfiguration.getLearningRate())
+	                .updater(networkConfiguration.getUpdater());  
 		int index = 0;
 		Layer layer = null;
-		for (NeuralNetworkLayer layerConfiguration: configuration.getLayers()) {
+		for (LayerConfiguration layerConfiguration: networkConfiguration.getLayers()) {
 			switch (layerConfiguration.getClassName()) {
-			case "NeuralNetworkDenseLayer": 
-				NeuralNetworkDenseLayer denseLayerConfiguration = (NeuralNetworkDenseLayer) layerConfiguration; 
+			case "DenseLayerConfiguration": 
+				DenseLayerConfiguration denseLayerConfiguration = (DenseLayerConfiguration) layerConfiguration; 
 				layer = new DenseLayer.Builder()
 					.nIn(denseLayerConfiguration.getNumberOfInputs())
 					.nOut(denseLayerConfiguration.getNumberOfHiddenNodes())
@@ -50,8 +50,8 @@ public class AIService {
                         .activation(layerConfiguration.getActivation())
                         .build(); 
 				break;
-			case "NeuralNetworkOutputLayer":
-				NeuralNetworkOutputLayer outputLayer = (NeuralNetworkOutputLayer) layerConfiguration; 
+			case "OutputLayerConfiguration":
+				OutputLayerConfiguration outputLayer = (OutputLayerConfiguration) layerConfiguration; 
 				layer = new OutputLayer.Builder(outputLayer.getLossFunction())
                 .weightInit(outputLayer.getWeightInitialization())
                 .activation(outputLayer.getActivation())

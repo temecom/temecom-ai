@@ -7,11 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('configuration', function() {
-    this.route('templates');
-    this.route('template');
-    this.route('training');
-  });
+  this.route('network-configurations', function() {
+        this.route('network-configuration', {path:':id'});    	
+    });
+  this.route('dashboard');
 });
 
 export default Router;
