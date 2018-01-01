@@ -9,12 +9,14 @@
 					{{ai-input title="route.common.id" readOnly=true value=model.networkConfiguration.id}}			
 					{{ai-input title="route.common.name" value=model.networkConfiguration.name}}									
 					{{ai-input title="route.network.learningRate" value=model.networkConfiguration.learningRate}}									
+					{{ai-input title="route.network.iterations" value=model.networkConfiguration.iterations}}									
 					{{ai-input title="route.network.backprop" value=model.networkConfiguration.backprop}}									
 					{{ai-input title="route.network.seed" value=model.networkConfiguration.seed}}									
 					{{ai-select items=model.weightInitializations title="route.weightInitialization.title" value=model.networkConfiguration.weightInit selected=(action "weightInitSelected")}}
 					{{ai-select items=model.activations title="route.network.activation" value=model.networkConfiguration.activation selected=(action "activationSelected")}}
 					{{ai-select items=model.updaters title="route.network.updater" value=model.networkConfiguration.updater selected=(action "updaterSelected")}}
 					{{ai-select items=model.optimizationAlgorithms title="route.network.optimizationAlgorithm" value=model.networkConfiguration.optimizationAlgorithm selected=(action "optimizationAlgorithmSelected")}}
+					{{ai-table tableDefinition=model.layersTable items=model.networkConfiguration.layers}}
 				</form>
 				<div class="card-footer">
 				<div class="btn-group">

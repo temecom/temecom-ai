@@ -1,10 +1,32 @@
 package net.temecom.ai.model;
 
+import org.nd4j.shade.jackson.annotation.JsonIdentityInfo;
+import org.nd4j.shade.jackson.annotation.JsonSubTypes;
+import org.nd4j.shade.jackson.annotation.JsonSubTypes.Type;
+import org.nd4j.shade.jackson.annotation.JsonTypeInfo;
+import org.nd4j.shade.jackson.annotation.ObjectIdGenerators;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection="entities")
+import net.temecom.ai.model.neuralNetwork.DenseLayerConfiguration;
+import net.temecom.ai.model.neuralNetwork.Instance;
+import net.temecom.ai.model.neuralNetwork.NetworkConfiguration;
+import net.temecom.ai.model.neuralNetwork.OutputLayerConfiguration;
+
+@JsonTypeInfo(
+		  use = JsonTypeInfo.Id.CLASS, 
+		  include = JsonTypeInfo.As.PROPERTY, 
+		  property = "_class")
+		@JsonSubTypes({ 
+		  @Type(value = Instance.class), 
+		  @Type(value = NetworkConfiguration.class),
+		  @Type(value=DenseLayerConfiguration.class),
+		  @Type(value=OutputLayerConfiguration.class)
+		})
+@JsonIdentityInfo(
+		  generator = ObjectIdGenerators.PropertyGenerator.class,
+		  property = "id")
 public class AIEntity {
 	@Id
 	protected String id;

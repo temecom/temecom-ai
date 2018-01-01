@@ -22,19 +22,24 @@ route:
     seed: "Random Seed"
     updater: "Updater"
     optimizationAlgorithm: "Optimization Algorithm"
+    iterations: "Iterations"
   instance: 
     title: "Instances"
     instance: "Instance"
   instanceStatus:
     title: "Instance Statuses"
     instanceStatus: "Instance Status"
-  layers: 
+  layer: 
     title: "Layers"
     layer: "Layer"
     dense-layer: "Dense Layer"
     output-layer: "Output Layer"
+    numberOfInputs: "Number of Inputs"
+    numberOfOutputs: "Number of Outputs"
+    activation: "Activation"
   weightInitialization:
     title: "Weight Initializations"
+    weightInitialization: "Weight Initialization"
 user:
   signin: "Sign In" 
   signout: "Sign Out"

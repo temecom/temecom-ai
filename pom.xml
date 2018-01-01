@@ -6,12 +6,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Temecom AI Service Master</name>
+	
 	<modules>
 		<module>temecom-ai-service</module>
 		<module>temecom-ai-model</module>
 		<module>temecom-ai-ui</module>
 	</modules>
 	<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.boot.version>1.5.9.RELEASE</spring.boot.version>
 		<springfox.version>2.7.0</springfox.version>
 		<java.version>1.8</java.version>
@@ -58,7 +60,11 @@
 				<artifactId>deeplearning4j-core</artifactId>
 				<version>${dl4j.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.reflections</groupId>
+				<artifactId>reflections</artifactId>
+				<version>0.9.10</version>
+			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
 			<dependency>
 				<groupId>org.yaml</groupId>
@@ -76,9 +82,8 @@
 			<!-- https://mvnrepository.com/artifact/org.nd4j/nd4j-native-platform -->
 			<dependency>
 				<groupId>org.nd4j</groupId>
-				<artifactId>nd4j-native-platform</artifactId>
+				<artifactId>nd4j-native</artifactId>
 				<version>${nd4j.version}</version>
-				<scope>test</scope>
 			</dependency>
 
 			<dependency>

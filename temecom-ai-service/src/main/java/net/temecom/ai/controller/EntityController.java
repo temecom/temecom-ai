@@ -2,7 +2,6 @@ package net.temecom.ai.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,21 +16,23 @@ import net.temecom.ai.repository.EntityRepository;
 public abstract class  EntityController <T extends AIEntity>{
 	
 	abstract public EntityRepository<T> getRepository() ;
+	public EntityRepository<T> getRepository(String className){
+		return this.getRepository();
+	}
 		
-	
 	@RequestMapping(value="", method=RequestMethod.POST)
 	public T createEntity(@RequestBody T entity) {
-		getRepository().save(entity);
+		getRepository(entity.getClassName()).save(entity);
 		return entity;
 	}
 	
 	@RequestMapping(value="", method=RequestMethod.GET)
-	public List<T> getEntitys() {
+	public List<T> getEntities() {
 		return getRepository().findAll();
 	}
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
 	public T updateEntity(@RequestBody T entity, @PathVariable String  id) {
-		getRepository().save(entity);
+		getRepository(entity.getClassName()).save(entity);
 		return entity;
 	}
 	

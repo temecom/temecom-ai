@@ -1,5 +1,7 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 import { pluralize } from 'ember-inflector';
+
 export default DS.RESTAdapter.extend({
 	pathForType : function(modelName) {
 		var camelized = Ember.String.camelize(modelName);

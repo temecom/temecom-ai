@@ -1,9 +1,11 @@
 <div class="col-lg-12">
 	<section class="row">
 		<div class="col-lg-12">
-				{{ai-table tableDefinition=model.tableDefinition items=model.networkConfigurations}}
+				{{ai-table 
+					tableDefinition=model.tableDefinition 
+					items=model.layerConfigurations
+				}}
 		</div>
 	</section>
 </div>
-
 {{outlet}}

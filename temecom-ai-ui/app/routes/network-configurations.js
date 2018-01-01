@@ -4,7 +4,14 @@ export default Route.extend({
 	model: function() {
 		return Ember.RSVP.hash({
 			networkConfigurations: this.store.findAll('networkConfiguration'),
-			title: 'route.network.title'
+			tableDefinition: {
+				title: 'route.network.title',
+				link: 'network-configurations.network-configuration',
+				columns: [
+					{title: "route.common.name", property: "name"},
+					{title: "route.common.id", property: "id"}
+				]
+			}
 		});
 	}
 });

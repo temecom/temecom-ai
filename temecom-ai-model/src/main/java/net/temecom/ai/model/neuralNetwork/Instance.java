@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.nd4j.shade.jackson.annotation.JsonIgnore;
+import org.nd4j.shade.jackson.annotation.JsonManagedReference;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import net.temecom.ai.model.AIEntity;
@@ -13,7 +14,7 @@ public class Instance extends AIEntity{
 
 	private Date startTime;
 	private NetworkConfiguration networkConfiguration; 
-	private InstanceStatus status;
+	private InstanceStatus instanceStatus;
 	@JsonIgnore
 	private NeuralNetConfiguration neuralNetwork; 
 	
@@ -30,15 +31,16 @@ public class Instance extends AIEntity{
 	public void setConfiguration(NetworkConfiguration networkConfiguration) {
 		this.networkConfiguration = networkConfiguration;
 	}
-	public InstanceStatus getStatus() {
-		return status;
+	public InstanceStatus getInstanceStatus() {
+		return instanceStatus;
 	}
-	public void setStatus(InstanceStatus status) {
-		this.status = status;
+	public void setInstanceStatus(InstanceStatus status) {
+		this.instanceStatus = status;
 	}
 	public NeuralNetConfiguration getNeuralNetwork() {
 		return neuralNetwork;
 	}
+	@JsonIgnore
 	public void setNeuralNetwork(NeuralNetConfiguration neuralNetwork) {
 		this.neuralNetwork = neuralNetwork;
 	}
@@ -46,7 +48,7 @@ public class Instance extends AIEntity{
 	public NetworkConfiguration getNetworkConfiguration() {
 		return networkConfiguration;
 	}
-	@JsonIgnore
+
 	public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
 		this.networkConfiguration = networkConfiguration;
 	}

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.temecom.ai.model.neuralNetwork.Instance;
+import net.temecom.ai.model.neuralNetwork.InstanceStatus;
 import net.temecom.ai.repository.EntityRepository;
 import net.temecom.ai.repository.InstanceRepository;
 import net.temecom.ai.service.AIService;
@@ -26,8 +27,18 @@ public class InstanceController extends EntityController<Instance>{
 	
 	
 	@RequestMapping(value="/{id}/activate", method=RequestMethod.GET)
-	public Instance activateInstance(@PathVariable String  id) {
+	public Instance activateInstance(@PathVariable String  id) {		
 		return service.activate(id);
+	}
+	
+	@RequestMapping(value="{id}", method=RequestMethod.PUT)
+	@Override
+	public Instance updateEntity(@RequestBody Instance entity, @PathVariable String  id) {
+		getRepository().save(entity);
+		if (InstanceStatus.RUNNING.equals(entity.getInstanceStatus())) {
+			service.activate(entity.getId());
+		}
+		return entity;
 	}
 
 	@Override
