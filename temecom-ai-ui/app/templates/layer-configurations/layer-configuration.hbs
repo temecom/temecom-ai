@@ -5,7 +5,8 @@
 			<div class="card-block">
 				<h3 class="card-title">{{t "route.layer.layer"}}</h3>
 				<div class="form">
-					{{ai-input title="route.common.id" readOnly=true value=model.layerConfiguration.id}}			
+					{{ai-input title="route.common.id" readOnly=true value=model.layerConfiguration.id}}
+					{{ai-select title="route.layer.type" items=model.layerTypes value=model.layer.configuration.layerType selected = (action "layerTypeSelected")}}			
 					{{ai-input title="route.common.name" value=model.layerConfiguration.name}}									
 					{{ai-input title="route.layer.numberOfInputs" value=model.layerConfiguration.numberOfInputs}}									
 					{{ai-input title="route.layer.numberOfOutputs" value=model.layerConfiguration.numberOfOutputs}}									

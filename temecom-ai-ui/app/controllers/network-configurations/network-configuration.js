@@ -18,6 +18,10 @@ export default Controller.extend({
 		}, 
 		optimizationAlgorithmSelected: function(id) {
 			this.setSelection('optimizationAlgorithm', id);
+		},
+		addLayerConfiguration: function(layer) {
+			var configuration = this.model.networkConfiguration;
+			configuration.get('layers').pushObject(layer);
 		}
 	}, 
 	

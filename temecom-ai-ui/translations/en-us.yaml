@@ -38,6 +38,7 @@ route:
     numberOfInputs: "Number of Inputs"
     numberOfOutputs: "Number of Outputs"
     activation: "Activation"
+    type: "Layer Type"
   weightInitialization:
     title: "Weight Initializations"
     weightInitialization: "Weight Initialization"

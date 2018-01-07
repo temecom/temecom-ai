@@ -1,14 +1,11 @@
-<div class="btn-group">
-	<button data-toggle="dropdown"
-		class="btn btn-secondary dropdown-toggle margin">
-		Action <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-		<li><a href="#">Action</a></li>
-		<li><a href="#" class="font-bold">Another action</a></li>
-		<li><a href="#">Something else here</a></li>
-		<li class="divider"></li>
-		<li><a href="#">Separated link</a></li>
-	</ul>
-</div>
+{{#bs-dropdown as |dd|}}
+  {{#dd.button }}{{t	title }} <span class="caret"></span>{{/dd.button}}
+  {{#dd.menu as |menu|}}  
+  	{{#each items as | item |}}
+	  	{{#menu.item}}
+	      <div class="btn-primary dropdown-item" {{action "itemSelected" item }}>{{item.name}}</div>
+	    {{/menu.item}}
+	{{/each}}
+  {{/dd.menu}}
+{{/bs-dropdown}}
 {{yield}}

@@ -25,20 +25,13 @@
 		{{#if newItem}}
 			<button type="button" class="btn btn-md btn-secondary"{{action "newItem"}}>{{t
 				"route.common.new" }}</button>
-				{{else}}
-			<div class="dropdown btn-group">
-				<button type="button" data-toggle="dropdown"
-					class="btn btn-md btn-secondary dropdown-toggle margin" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">
-					{{t	"route.common.add" }} <span class="caret"></span>
-				</button>
-				 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					<a href="#" class="dropdown-item">Action</a>
-					{{#each itemsToAdd as | itemToAdd |}}
-						<a href="#" {{action "addItem" itemToAdd}}>{{itemToAdd.name}}</a>
-					{{/each}}
-				</div>
-			</div>
-			{{/if}}
+		{{else}}
+				{{ai-button-list 
+					title="route.common.add"
+					items=itemsToAdd
+					action=(action "addItem")
+				}}
+		{{/if}}
 			<button type="button" class="btn btn-md btn-secondary"{{action "deleteItem"}}>{{t
 				"route.common.delete" }}</button>
 			

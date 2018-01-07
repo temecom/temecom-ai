@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.temecom.ai.model.neuralNetwork.DenseLayerConfiguration;
+import net.temecom.ai.model.neuralNetwork.InputLayerConfiguration;
 import net.temecom.ai.model.neuralNetwork.LayerConfiguration;
 import net.temecom.ai.model.neuralNetwork.OutputLayerConfiguration;
 import net.temecom.ai.repository.EntityRepository;
@@ -24,11 +25,15 @@ public class LayerConfigurationController {
 
 	@Autowired
 	private EntityRepository<OutputLayerConfiguration> outputLayerRepository ;
-	
+
+	@Autowired
+	private EntityRepository<InputLayerConfiguration> inputLayerRepository ;
+
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public List<LayerConfiguration> getEntities() {
 		List<LayerConfiguration> layers = new ArrayList<>();
 		layers.addAll(denseLayerRepository.findAll());
+		layers.addAll(inputLayerRepository.findAll());
 		layers.addAll(outputLayerRepository.findAll());
 		return layers;
 	}

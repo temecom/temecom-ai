@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import net.temecom.ai.model.neuralNetwork.Instance;
 import net.temecom.ai.model.neuralNetwork.InstanceStatus;
 import net.temecom.ai.repository.EntityRepository;
-import net.temecom.ai.repository.InstanceRepository;
 import net.temecom.ai.service.AIService;
 
 @RestController

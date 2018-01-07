@@ -10,6 +10,10 @@ export default Controller.extend({
 		},
 		activationSelected: function(activation) {
 			this.get('model.layerConfiguration').set('activation', activation);			
+		}, 
+		
+		layerTypeSelected: function(layerType) {
+			this.get('model.layerConfiguration').set('layerType', layerType);
 		}
 	}
 });
