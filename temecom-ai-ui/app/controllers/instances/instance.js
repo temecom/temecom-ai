@@ -12,6 +12,10 @@ export default Controller.extend({
 		},
 		networkConfigurationSelected: function(id) {
 			this.setSelection('networkConfiguration', id);
+		},
+		addLayer: function(layer) {
+			var configuration = this.model.instance;
+			configuration.get(layers).push(layer);
 		}
 	}, 
 	

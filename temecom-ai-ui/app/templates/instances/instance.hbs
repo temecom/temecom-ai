@@ -10,7 +10,11 @@
 					{{ai-input title="route.common.name" value=model.instance.name}}									
 					{{ai-select items=model.instanceStatuses title="route.instanceStatus.instanceStatus" value=model.instance.instanceStatus selected=(action "instanceStatusSelected")}}
 					{{ai-select items=model.networkConfigurations title="route.network.configuration" value=model.instance.networkConfiguration selected=(action "networkConfigurationSelected")}}
-					{{ai-table tableDefinition=model.tableDefinition items=model.network.layers}}
+					{{ai-table tableDefinition=model.tableDefinition 
+						items=model.instance.layers
+						addItems=model.layers
+						addItem=(action "addLayer")
+					}}
 				</form>
 				<div class="card-footer">
 				<div class="btn-group">

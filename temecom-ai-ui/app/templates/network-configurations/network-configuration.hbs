@@ -16,7 +16,7 @@
 					{{ai-select items=model.activations title="route.network.activation" value=model.networkConfiguration.activation selected=(action "activationSelected")}}
 					{{ai-select items=model.updaters title="route.network.updater" value=model.networkConfiguration.updater selected=(action "updaterSelected")}}
 					{{ai-select items=model.optimizationAlgorithms title="route.network.optimizationAlgorithm" value=model.networkConfiguration.optimizationAlgorithm selected=(action "optimizationAlgorithmSelected")}}
-					{{ai-table tableDefinition=model.layersTable items=model.networkConfiguration.layers}}
+					{{ai-table tableDefinition=model.layersTable items=model.networkConfiguration.layers itemsToAdd=model.layers}}
 				</form>
 				<div class="card-footer">
 				<div class="btn-group">

@@ -8,5 +8,6 @@ export default AIEntity.extend({
 	learningRate : DS.attr('number'),
 	backprop : DS.attr('boolean'),
 	seed : DS.attr('number'),
-	updater : DS.belongsTo('Updater')
+	updater : DS.belongsTo('Updater'), 
+	layers: DS.hasMany('LayerConfiguration')
 });

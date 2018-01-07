@@ -6,8 +6,9 @@ export default Route.extend({
 			instance: this.store.findRecord('instance', parameter.id),
 			networkConfigurations: this.store.findAll('networkConfiguration'),
 			instanceStatuses: this.store.findAll('instanceStatus'),
+			layers: this.store.findAll('layerConfiguration'),
 			tableDefinition: {
-				title: "route.common.title",
+				title: "route.layer.title",
 				columns: [
 					{title: "route.common.name", property: "name"},
 					{title: "route.common.id", property: "id"}

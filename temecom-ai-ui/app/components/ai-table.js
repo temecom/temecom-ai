@@ -5,11 +5,14 @@ export default Component.extend({
 	tableDefinition: null,
 	items: null,
 	actions: {
-		delete: function(selectedItem) {
-			this.send("delete", selectedItem);
+		deleteItem: function(selectedItem) {
+			this.get("deleteItem")(selectedItem);
 		},
-		new: function() {
-			this.send("new");
+		newItem: function() {
+			this.get("newItem")();
+		},
+		addItem: function(item) {
+			this.get("addItem")(item);
 		}
 	}
 });

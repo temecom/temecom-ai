@@ -8,6 +8,7 @@ export default Route.extend({
 			activations: this.store.findAll('activation'),
 			updaters: this.store.findAll('updater'), 
 			optimizationAlgorithms: this.store.findAll('optimizationAlgorithm'),
+			layers: this.store.findAll('layerConfiguration'),
 			layersTable: {
 				title: 'route.layer.title',
 				link: 'layer-configurations.layer-configuration',
