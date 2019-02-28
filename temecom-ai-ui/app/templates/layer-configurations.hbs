@@ -4,7 +4,9 @@
 				{{ai-table 
 					tableDefinition=model.tableDefinition 
 					items=model.layerConfigurations
-					newItem=(action "newLayer")
+					itemsToAdd=model.layerTypes
+					addItem=(action "newLayer")
+					itemSelected=(action "layerSelected")
 				}}
 		</div>
 	</section>

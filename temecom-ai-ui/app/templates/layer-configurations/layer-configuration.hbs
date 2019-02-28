@@ -6,12 +6,13 @@
 				<h3 class="card-title">{{t "route.layer.layer"}}</h3>
 				<div class="form">
 					{{ai-input title="route.common.id" readOnly=true value=model.layerConfiguration.id}}
-					{{ai-select title="route.layer.type" items=model.layerTypes value=model.layer.configuration.layerType selected = (action "layerTypeSelected")}}			
 					{{ai-input title="route.common.name" value=model.layerConfiguration.name}}									
+					{{ai-input title="route.common.className" value=model.layerConfiguration.className}}									
 					{{ai-input title="route.layer.numberOfInputs" value=model.layerConfiguration.numberOfInputs}}									
 					{{ai-input title="route.layer.numberOfOutputs" value=model.layerConfiguration.numberOfOutputs}}									
 					{{ai-select items=model.weightInitializations title="route.weightInitialization.weightInitialization" value=model.layerConfiguration.weightInitialization selected=(action "weightInitializationSelected")}}
 					{{ai-select items=model.activations title="route.layer.activation" value=model.layerConfiguration.activation selected=(action "activationSelected")}}
+					{{outlet}}
 				</div>
 				<div class="card-footer">
 				<div class="btn-group">
@@ -23,4 +24,3 @@
 	</div>
 </section>
 </div>
-{{outlet}}

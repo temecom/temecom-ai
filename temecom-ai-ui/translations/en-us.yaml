@@ -9,6 +9,7 @@ route:
     delete: "Delete"
     add: "Add"
     userName: "User Name"
+    className: "Class Name"
   dashboard:
     title: "Dashboard"
     information:

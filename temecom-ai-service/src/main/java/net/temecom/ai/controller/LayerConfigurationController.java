@@ -46,6 +46,7 @@ public class LayerConfigurationController {
 		}
 		return layer; 
 	}
+	
 	@RequestMapping(value="{id}", method=RequestMethod.PUT)
 	public LayerConfiguration updateEntity(@RequestBody LayerConfiguration entity, @PathVariable String  id) {
 		if (DenseLayerConfiguration.class.equals(entity.getClass())) {

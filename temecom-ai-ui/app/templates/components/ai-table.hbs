@@ -12,10 +12,10 @@
 		</thead>
 		<tbody>
 			{{#each items as | item |}}
-			<tr>
+			<tr {{action "itemSelected" item}}>
 				{{#each tableDefinition.columns as | column |}}
-				<td>{{#link-to tableDefinition.link item.id}}{{get item
-					column.property}}{{/link-to}}</td> {{/each}}
+				<td><a href="#">{{get item
+					column.property}}</a></td> {{/each}}
 			</tr>
 			{{/each}}
 		</tbody>

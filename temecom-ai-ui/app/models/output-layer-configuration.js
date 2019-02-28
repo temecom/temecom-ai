@@ -1,5 +1,5 @@
-import AIEntity from './ai-entity';
+import LayerConfiguration from './layer-configuration';
 import DS from 'ember-data';
-export default AIEntity.extend({
-	numberOfOutputs: DS.attr('number')
+export default LayerConfiguration.extend({
+	 lossFunction: DS.belongsTo('LossFunction')
 });

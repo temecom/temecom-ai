@@ -13,6 +13,9 @@ export default Component.extend({
 		},
 		addItem: function(item) {
 			this.get("addItem")(item);
+		},
+		itemSelected: function(item) {
+			this.get("itemSelected")(item);
 		}
 	}
 });

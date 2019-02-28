@@ -15,7 +15,7 @@ export default Controller.extend({
 		},
 		addLayer: function(layer) {
 			var configuration = this.model.instance;
-			configuration.get(layers).push(layer);
+			configuration.get('layers').push(layer);
 		}
 	}, 
 	

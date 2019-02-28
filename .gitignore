@@ -4,5 +4,7 @@
 .gitignore~
 .classpath
 .springBeans
-
+**/.factorypath
+**/.sts4-cache
+**/.mvn
 

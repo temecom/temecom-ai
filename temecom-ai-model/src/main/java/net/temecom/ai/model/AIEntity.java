@@ -10,19 +10,21 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import net.temecom.ai.model.neuralNetwork.DenseLayerConfiguration;
+import net.temecom.ai.model.neuralNetwork.InputLayerConfiguration;
 import net.temecom.ai.model.neuralNetwork.Instance;
 import net.temecom.ai.model.neuralNetwork.NetworkConfiguration;
 import net.temecom.ai.model.neuralNetwork.OutputLayerConfiguration;
-
+@Document
 @JsonTypeInfo(
-		  use = JsonTypeInfo.Id.CLASS, 
+		  use = JsonTypeInfo.Id.NAME, 
 		  include = JsonTypeInfo.As.PROPERTY, 
 		  property = "_class")
 		@JsonSubTypes({ 
-		  @Type(value = Instance.class), 
-		  @Type(value = NetworkConfiguration.class),
-		  @Type(value=DenseLayerConfiguration.class),
-		  @Type(value=OutputLayerConfiguration.class)
+		  @Type(value = Instance.class, name="Instance"), 
+		  @Type(value = NetworkConfiguration.class, name="NetworkConfiguration"),
+		  @Type(value=DenseLayerConfiguration.class, name="DenseLayerConfiguration"),
+		  @Type(value=OutputLayerConfiguration.class, name="OutputLayerConfiguration"),
+		  @Type(value=InputLayerConfiguration.class, name="InputLayerConfiguration")
 		})
 @JsonIdentityInfo(
 		  generator = ObjectIdGenerators.PropertyGenerator.class,
