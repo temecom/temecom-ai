@@ -10,6 +10,10 @@ export default Route.extend({
 		.then(function(model){
 			return model;
 		});
+	},
+	setupController: function(controller,model) {
+		controller.set('model',model);
+		this.controllerFor('layerConfigurations.layerConfiguration').set('model.layerConfiguration',model.layerConfiguration);
 	}
 });
  

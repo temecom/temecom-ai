@@ -15,12 +15,11 @@ Router.map(function() {
       this.route('instance', {path:':id'});    	
   });
   this.route('layer-configurations', function() {
-      this.route('layer-configuration' ,function(){
-    	  this.route('input-layer-configuration', {path:':id'});
+      this.route('layer-configuration',{path:'/:id'},function(){
+    	  this.route('input-layer-configuration',{path:'/:id'});
       });	
   });
   this.route('layer-configurations');
-  this.route('layer-configuration');
 });
 
 export default Router;
