@@ -1,8 +1,8 @@
 import Route from '@ember/routing/route';
-import Ember from 'ember';
+import {hash as rsvpHash}  from 'rsvp';
 export default Route.extend({
 	model: function() {
-		return Ember.RSVP.hash({
+		return rsvpHash({
 			networkConfigurations: this.store.findAll('networkConfiguration'),
 			tableDefinition: {
 				title: 'route.network.title',

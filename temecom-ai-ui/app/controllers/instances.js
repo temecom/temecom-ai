@@ -9,6 +9,9 @@ export default Controller.extend({
 			.then(function(configuration){
 				self.transitionToRoute("instances.instance", configuration);
 			});
+		}, 
+		instanceSelected: function(instance) {
+			this.transitionToRoute('instances.instance', instance);
 		}
 	}
 });

@@ -18,7 +18,7 @@ export default Controller.extend({
 				this.transitionToRoute('layer-configurations.layer-configuration.input-layer-configuration', layer.id);
 				break;
 			case "OutputLayerConfiguration":
-				this.transitionToRoute('layer-configurations.layer-configuration.input-layer-configuration', layer.id);
+				this.transitionToRoute('layer-configurations.layer-configuration.output-layer-configuration', layer.id);
 				break;
 			case "DenseLayerConfiguration":
 				this.transitionToRoute('layer-configurations.layer-configuration.dense-layer-configuration', layer.id);

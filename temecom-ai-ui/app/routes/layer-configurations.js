@@ -1,6 +1,5 @@
 import Route from '@ember/routing/route';
 import {hash as rsvpHash, all as rsvpAll} from 'rsvp'; 
-import Ember from 'ember';
 export default Route.extend({
 	model: function() {
 		var self = this; 

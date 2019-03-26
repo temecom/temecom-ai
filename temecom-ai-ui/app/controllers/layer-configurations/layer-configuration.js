@@ -15,7 +15,7 @@ export default Controller.extend({
 			this.set('model.layerConfiguration.layerType', layerType);
 		}, 
 		saveLayer: function() {
-			this.get('model.layerConfiguration').save();
+			this.get('model').layerConfiguration.save();
 		}
 	},
 	setLayerConfiguration: function(layerConfiguration) {

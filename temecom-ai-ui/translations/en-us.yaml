@@ -40,9 +40,14 @@ route:
     numberOfOutputs: "Number of Outputs"
     activation: "Activation"
     type: "Layer Type"
+    dense:
+      numberOfHiddenNodes: "Number of Hidden Nodes"
   weightInitialization:
     title: "Weight Initializations"
     weightInitialization: "Weight Initialization"
+  lossFunction: 
+    title: "Loss Functions"
+    lossFunction: "Loss Function"
 user:
   signin: "Sign In" 
   signout: "Sign Out"

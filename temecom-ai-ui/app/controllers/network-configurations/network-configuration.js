@@ -7,17 +7,17 @@ export default Controller.extend({
 			configuration.save();
 		},
 
-		weightInitSelected: function(id) {
-			this.setSelection('weightInit', id);
+		weightInitSelected: function(weightInit) {
+			this.setSelection('weightInit', weightInit);
 		},
-		activationSelected: function(id) {
-			this.setSelection('activation', id);
+		activationSelected: function(activation) {
+			this.setSelection('activation', activation);
 		},
-		updaterSelected: function(id) {
-			this.setSelection('updater', id);
+		updaterSelected: function(updater) {
+			this.setSelection('updater', updater);
 		}, 
-		optimizationAlgorithmSelected: function(id) {
-			this.setSelection('optimizationAlgorithm', id);
+		optimizationAlgorithmSelected: function(optimizationAlgorithm) {
+			this.setSelection('optimizationAlgorithm', optimizationAlgorithm);
 		},
 		addLayerConfiguration: function(layer) {
 			var configuration = this.model.networkConfiguration;

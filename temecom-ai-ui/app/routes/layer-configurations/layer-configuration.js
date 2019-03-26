@@ -13,7 +13,7 @@ export default Route.extend({
 	},
 	setupController: function(controller,model) {
 		controller.set('model',model);
-		this.controllerFor('layerConfigurations.layerConfiguration').set('model.layerConfiguration',model.layerConfiguration);
+		this.controllerFor('layerConfigurations.layerConfiguration').set('model',model);
 	}
 });
  

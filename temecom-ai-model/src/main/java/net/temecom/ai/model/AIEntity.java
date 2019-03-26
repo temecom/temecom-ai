@@ -16,7 +16,7 @@ import net.temecom.ai.model.neuralNetwork.NetworkConfiguration;
 import net.temecom.ai.model.neuralNetwork.OutputLayerConfiguration;
 @Document
 @JsonTypeInfo(
-		  use = JsonTypeInfo.Id.NAME, 
+		  use = JsonTypeInfo.Id.MINIMAL_CLASS, 
 		  include = JsonTypeInfo.As.PROPERTY, 
 		  property = "_class")
 		@JsonSubTypes({ 

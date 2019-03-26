@@ -1,8 +1,11 @@
 <div class="col-lg-12">
 	<section class="row">
 		<div class="col-lg-12">
-				{{ai-table tableDefinition=model.tableDefinition items=model.networkConfigurations
-					newItem=(action "newConfiguration")
+				{{ai-table 
+					tableDefinition=model.tableDefinition 
+					items=model.networkConfigurations
+					newItem=(action "newConfiguration") 
+					itemSelected=(action "configurationSelected")
 				}}
 		</div>
 	</section>

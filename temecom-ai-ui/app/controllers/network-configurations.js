@@ -10,5 +10,8 @@ export default Controller.extend({
 				self.transitionToRoute("network-configurations.network-configuration", configuration);
 			});
 		},
+		configurationSelected: function(configuration) {
+			this.transitionToRoute('network-configurations.network-configuration', configuration);
+		}
 	}
 });

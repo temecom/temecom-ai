@@ -1,16 +1,20 @@
-import Route from '@ember/routing/route';
 import {hash as rsvpHash}  from 'rsvp';
-export default Route.extend({
+import LayerConfiguration from '../layer-configuration';
+export default LayerConfiguration.extend({
 	model: function(parameters) {
-		return rsvpHash({
-			layerConfiguration: this.store.findRecord('outputlayerConfiguration', parameters.id),
-			layerTypes: this.store.findAll('layerType'), 
-			activations: this.store.findAll('activation'),
-			weightInitializations: this.store.findAll('weightInit')
-		})
-		.then(function(model){
-			return model;
-		});
+		var self = this;
+		return this._super()
+			.then(function(model){		
+				model.layerConfiguration = self.store.findRecord('outputLayerConfiguration', parameters.id),
+				model.lossFunctions = self.store.findAll('lossFunction')
+				return rsvpHash(model);
+			}) 
+			.then(function(model){		
+				return model;
+			});
+	},
+	setupController: function(controller,model) {
+		this._super(controller,model);
 	}
 });
  

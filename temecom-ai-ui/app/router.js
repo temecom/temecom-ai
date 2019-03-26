@@ -16,7 +16,9 @@ Router.map(function() {
   });
   this.route('layer-configurations', function() {
       this.route('layer-configuration',{path:'/:id'},function(){
-    	  this.route('input-layer-configuration',{path:'/:id'});
+    	  this.route('output-layer-configuration',{path:'/output-layer-configuration/:id'});
+    	  this.route('input-layer-configuration',{path:'/input-layer-configuration/:id'});
+    	  this.route('dense-layer-configuration',{path:'/dense-layer-configuration/:id'});
       });	
   });
   this.route('layer-configurations');

@@ -3,15 +3,15 @@ import Controller from '@ember/controller';
 export default Controller.extend({
 	actions: {
 		saveInstance: function() {
-			var configuration = this.model.instance; 
-			configuration.save();
+			var instance = this.get('model.instance'); 
+			instance.save();
 		},
 
-		instanceStatusSelected: function(id) {
-			this.setSelection('instanceStatus', id);
+		instanceStatusSelected: function(status) {
+			this.setSelection('instanceStatus', status);
 		},
-		networkConfigurationSelected: function(id) {
-			this.setSelection('networkConfiguration', id);
+		networkConfigurationSelected: function(networkConfiguration) {
+			this.setSelection('networkConfiguration', networkConfiguration);
 		},
 		addLayer: function(layer) {
 			var configuration = this.model.instance;
@@ -19,8 +19,7 @@ export default Controller.extend({
 		}
 	}, 
 	
-	setSelection: function(property, id) {
-		var record= this.store.peekRecord(property, id);
-		this.model.instance.set(property, record);
+	setSelection: function(property, value) {
+		this.model.instance.set(property, value);
 	}
 });

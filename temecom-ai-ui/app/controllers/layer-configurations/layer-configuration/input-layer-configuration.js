@@ -1,9 +1,4 @@
-import Controller from '@ember/controller';
-import { inject as controller} from '@ember/controller';
-export default Controller.extend({
-	actions: {
-		saveLayer: function() {
-			this.get('model.layerConfiguration').save();
-		}
-	}
+import LayerConfiguration from '../layer-configuration';
+export default LayerConfiguration.extend({
+
 });

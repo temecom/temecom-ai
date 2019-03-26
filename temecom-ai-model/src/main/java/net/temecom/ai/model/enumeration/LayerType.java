@@ -17,6 +17,6 @@ public enum LayerType {
 	}
 	 
 	 public String className() {
-		 return this.layerClass.getName();
+		 return this.layerClass.getSimpleName();
 	 }
 }

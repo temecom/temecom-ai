@@ -37,6 +37,7 @@ public class Instance extends AIEntity{
 	public void setInstanceStatus(InstanceStatus status) {
 		this.instanceStatus = status;
 	}
+	@JsonIgnore
 	public NeuralNetConfiguration getNeuralNetwork() {
 		return neuralNetwork;
 	}
@@ -44,7 +45,6 @@ public class Instance extends AIEntity{
 	public void setNeuralNetwork(NeuralNetConfiguration neuralNetwork) {
 		this.neuralNetwork = neuralNetwork;
 	}
-	@JsonIgnore
 	public NetworkConfiguration getNetworkConfiguration() {
 		return networkConfiguration;
 	}
